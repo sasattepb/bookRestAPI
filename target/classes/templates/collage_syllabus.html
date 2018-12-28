@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="fragments/header :: header">
+</head>
+<body>
+	<script>
+		function addBook() {
+			var bookVal = document.getElementById('bookId').value;
+			window.location = "addBook?bookDtls=" + bookVal;
+		}
+		function searchBook() {
+			var bookVal = document.getElementById('bookId').value;
+			window.location = "searchBook?bookTitle=" + bookVal;
+		}
+
+		function deleteBook() {
+			var bookVal = document.getElementById('bookId').value;
+			window.location = "deleteBook?delBook=" + bookVal;
+		}
+		
+		function searchBookByTitle(){
+			var bookVal = document.getElementById('bookId').value;
+			window.location = "searchBookByTitle?bookTitle=" + bookVal;
+		}
+	</script>
+	<div class="container">
+
+		<div class="starter-template" align="center">
+			<h1>College Syllabus web application</h1>
+
+			<br /> Input: <input type="text" id="bookId" /> <br />
+			<th:table th:align="center">
+				<th:tr>
+                a. <th:td>
+						<a href="#" onclick="addBook()">Add a Book</a>
+					</th:td>
+					<br />
+                b.<th:td>
+						<a href="addSubject">Add Subject</a>
+					</th:td>
+					<br />
+                c.<th:td>
+						<a href="#" onclick="deleteBook()">Delete a book</a>
+					</th:td>
+					<br />
+                d.<th:td>
+						<a href="deleteSubject">Delete a Subject</a>
+					</th:td>
+					<br />
+                e.<th:td>
+						<a href="#" onclick="searchBook()">Search for a book</a>
+					</th:td>
+					<br />
+                f.<th:td>
+						<a href="#" onclick="searchBookByTitle()">Search for a book by Title</a>
+					</th:td>
+					<br />
+										
+                g.<th:td>
+						<a href="searchubject">Search for a subject</a>
+					</th:td>
+					<br />
+                h.<th:td>
+						<a href="exit">Exit</a>
+					</th:td>
+				</th:tr>
+			</th:table>
+
+
+		</div>
+	</div>
+
+
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
